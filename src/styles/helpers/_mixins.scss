@@ -12,6 +12,19 @@
   border: $value $style $color;
 }
 
+// prefixer
+@mixin prefixer($property, $value, $prefixes:()){
+  @each $prefix in $prefixes {
+      #{'-' + $prefix + '-' + $property}: $value;
+  }
+  #{$property}: $value;
+}
+
+// border-radius
+@mixin border-radius($r){
+  @include prefixer(border-radius,$r, webkit moz o ms)
+}
+
 // Define mixin to generate gap classes
 @mixin generate-gap-classes($max-gap: 100, $step: 1) {
   @for $i from 1 through $max-gap {

@@ -1,0 +1,50 @@
+@use '../helpers/variables' as *;
+@use '../helpers/mixins' as *;
+
+button {
+  background: $color-white;
+  min-height: 40px;
+  text-align: center;
+  color: $color-black;
+  text-transform: capitalize;
+  @include border-radius(8px);
+  border: 0;
+  box-shadow: none;
+  outline: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  transition: all 0.5s;
+
+  &.btn {
+    min-width: 95px;
+  }
+
+  &.block {
+    width: 100%;
+  }
+
+  &.primary,
+  &.active {
+    background: $color-primary;
+    color: $color-white;
+  }
+
+  &.secondary {
+    background: $color-secondary;
+    color: $color-white;
+  }
+
+  &:focus {
+    outline: none;
+  }
+  
+  &:disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}

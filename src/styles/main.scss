@@ -7,5 +7,9 @@
 /*Utilities Classes*/
 @use './utilities/utilities' as *;
 
+/* UI Components */
+@use "./components/buttons" as *;
+@use "./components/form" as *;
+
 /*Global Classes*/
 @use './global/global' as *;
