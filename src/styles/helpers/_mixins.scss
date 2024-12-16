@@ -1,0 +1,49 @@
+// Mixins
+
+// Media Query
+@mixin media-query($size) {
+  @media (min-width: #{$size}) {
+    @content;
+  }
+}
+
+// border
+@mixin border($value,$style,$color) {
+  border: $value $style $color;
+}
+
+// Define mixin to generate gap classes
+@mixin generate-gap-classes($max-gap: 100, $step: 1) {
+  @for $i from 1 through $max-gap {
+    .gap-#{$i * $step} {
+      gap: $i * $step * 1px; // Apply gap in pixels
+    }
+  }
+}
+
+// Usage of the mixin to generate gap classes
+@include generate-gap-classes(100, 1);
+
+// Mixin to generate padding and margin classes for all directions
+@mixin generate-padding-margin-classes($max-value: 100, $step: 1) {
+  @for $i from 1 through $max-value {
+    // Generate padding classes
+    .pt-#{$i} { padding-top: $i * $step * 1px; }
+    .pr-#{$i} { padding-right: $i * $step * 1px; }
+    .pb-#{$i} { padding-bottom: $i * $step * 1px; }
+    .pl-#{$i} { padding-left: $i * $step * 1px; }
+    .px-#{$i} { padding-left: $i * $step * 1px; padding-right: $i * $step * 1px; }
+    .py-#{$i} { padding-top: $i * $step * 1px; padding-bottom: $i * $step * 1px; }
+
+    // Generate margin classes
+    .mt-#{$i} { margin-top: $i * $step * 1px; }
+    .mr-#{$i} { margin-right: $i * $step * 1px; }
+    .mb-#{$i} { margin-bottom: $i * $step * 1px; }
+    .ml-#{$i} { margin-left: $i * $step * 1px; }
+    .mx-#{$i} { margin-left: $i * $step * 1px; margin-right: $i * $step * 1px; }
+    .my-#{$i} { margin-top: $i * $step * 1px; margin-bottom: $i * $step * 1px; }
+  }
+}
+
+// Usage of the mixin to generate padding and margin classes
+@include generate-padding-margin-classes(100, 1);

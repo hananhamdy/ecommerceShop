@@ -1,0 +1,39 @@
+// Variables
+
+/* Colors */
+$color-primary: #5093f7;
+$color-secondary: #f7931e;
+// Monochrome colors
+$color-black: #000000;
+$color-white: #ffffff;
+$color-body: #22262a;
+$color-anthracite: #666666;
+$color-mid-grey: #999999;
+$color-platinum: #afafaf;
+$color-silver: #cccccc;
+$color-aluminum: #ebebeb;
+$color-light-grey: #f4f4f4;
+$color-transparent: transparent;
+
+/* Colors List */
+$colorsList: (
+    primary: $color-primary,
+    secondary: $color-secondary,
+    black: $color-black,
+    white: $color-white,
+    body: $color-body,
+    anthracite: $color-anthracite,
+    mid-grey: $color-mid-grey,
+    platinum: $color-platinum,
+    silver: $color-silver,
+    aluminum: $color-aluminum,
+    light-grey: $color-light-grey,
+    transparent: $color-transparent
+);
+
+/* Media Queries */
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1280px;
+$xxl: 1536px;
