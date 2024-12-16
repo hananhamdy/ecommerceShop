@@ -33,8 +33,7 @@
                                 </div>
                             </mat-card-title>
                             <div class="card-meta">
-                                <mat-card-subtitle class="price">{{product.price}}</mat-card-subtitle>
-                                <mat-card-subtitle>{{product.category}}</mat-card-subtitle>
+                                <mat-card-subtitle class="price">{{ product.price | priceFormatting:'$' }}</mat-card-subtitle>
                             </div>
                         </mat-card-header>
                         <mat-card-actions>

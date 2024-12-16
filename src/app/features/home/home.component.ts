@@ -15,10 +15,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoadingComponent } from "../../shared/components/loading/loading.component";
 import { Dialog } from '@angular/cdk/dialog';
 import { OverlayComponent } from '../../shared/components/overlay/overlay.component';
+import { PriceFormattingPipe } from '../../shared/pipes/price-formatting.pipe';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NoDataComponent, MatCardModule, MatButtonModule, RouterLink, HttpClientModule, MatLabel, MatSelect, MatFormField, MatOption, LoadingComponent],
+  imports: [NoDataComponent, MatCardModule, MatButtonModule, RouterLink, HttpClientModule, MatLabel, MatSelect, MatFormField, MatOption, LoadingComponent, PriceFormattingPipe],
   providers: [],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

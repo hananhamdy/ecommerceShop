@@ -24,7 +24,6 @@ export const routes: Routes = [
     },
     {
         path: 'home/:id',
-        canActivate: [AuthorizedGuard],
         component: SingleProductComponent
     },
     {
