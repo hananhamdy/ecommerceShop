@@ -1,12 +1,12 @@
 import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
 import { Component, inject, OnInit } from '@angular/core';
+import { Product } from '../../../core/interfaces/product.interface';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatOption, MatSelect, MatSelectModule } from '@angular/material/select';
 import { APIs } from '../../../core/configs/APIs.config';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Product } from '../../../core/models/product.model';
 
 @Component({
   selector: 'app-overlay',

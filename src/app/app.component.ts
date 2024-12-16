@@ -1,16 +1,24 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from "./shared/components/header/header.component";
-import { FooterComponent } from "./shared/components/footer/footer.component";
 import { RouterOutlet } from '@angular/router';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-
+import { Title } from '@angular/platform-browser';
+import { HeaderComponent } from './core/components/header/header.component';
+import { FooterComponent } from './core/components/footer/footer.component';
+import { NotAuthorizedGuard } from './core/guards/not-autherized.guard';
+import { AuthorizedGuard } from './core/guards/autherized.guard';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, FooterComponent, RouterOutlet, MatSlideToggleModule],
+  standalone: true,
+  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  providers: [NotAuthorizedGuard, AuthorizedGuard],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'angular-project-name';
+  title = '';
+
+  constructor(private _titleService:Title) {
+    this._titleService.setTitle("E-commerce Shop");
+    this.title = "E-commerce Shop";
+  }
 }

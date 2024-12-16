@@ -3,38 +3,43 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Product } from '../../core/interfaces/product.interface';
 import { APIs } from '../../core/configs/APIs.config';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatOption, MatSelect } from '@angular/material/select';
 import { NoDataComponent } from '../../shared/components/no-data/no-data.component';
+import { AuthenticationService } from '../../core/services/authentication.service';
+import { User } from '../../core/interfaces/user.interface';
 import { Title } from '@angular/platform-browser';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoadingComponent } from "../../shared/components/loading/loading.component";
 import { Dialog } from '@angular/cdk/dialog';
 import { OverlayComponent } from '../../shared/components/overlay/overlay.component';
-import { Product } from '../../core/models/product.model';
-
 @Component({
-  selector: 'app-product-list',
+  selector: 'app-home',
   standalone: true,
   imports: [NoDataComponent, MatCardModule, MatButtonModule, RouterLink, HttpClientModule, MatLabel, MatSelect, MatFormField, MatOption, LoadingComponent],
   providers: [],
-  templateUrl: './product-list.component.html',
-  styleUrl: './product-list.component.scss'
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss'
 })
-export class ProductListComponent {
-  dialog = inject(Dialog);
+export class HomeComponent {
+dialog = inject(Dialog);
   private _snackBar = inject(MatSnackBar);
+  user: User | null = null;
   productsList: Product[] = [];
   categoriesList: string[] = [];
   selected = 'All';
   isLoading = false;
 
-  constructor(private _titleService: Title, private _http: HttpClient) {
+  constructor(private _titleService: Title, private _http: HttpClient, private _authenticationService: AuthenticationService) {
     this._titleService.setTitle("Categories");
   }
 
   ngOnInit() {
+    this._authenticationService.getCurrentUser().subscribe(user => {
+      this.user = user;
+    });
     this.getCategoriesList();
     this.getProductsList();
   }

@@ -9,9 +9,11 @@
                     }
                 </mat-select>
             </mat-form-field>
+            @if (user?.role == 'admin') {
                 <div>
                     <button class="btn secondary" (click)="openDialog('add')">Add Product</button>
                 </div>
+            }
         </div>
         <div class="cards-wrapper">
             @if (isLoading) {
@@ -37,8 +39,10 @@
                         </mat-card-header>
                         <mat-card-actions>
                             <button class="btn primary" [routerLink]="'/category/' + product.id">show more</button>
+                            @if (user && user.role == 'admin') {
                                 <button mat-button (click)="updateProduct(product)" >Edit</button>
                                 <button mat-button (click)="deleteProduct(product)">Delete</button>
+                            }
                         </mat-card-actions>
                     </mat-card>
                 } @empty {

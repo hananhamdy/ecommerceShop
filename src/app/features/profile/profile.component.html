@@ -1,0 +1,13 @@
+<section class="section">
+    <div class="container">
+        <mat-card class="card">
+            <mat-card-header>
+              <img mat-card-md-image [src]="user?.avatar"  [alt]="user?.username">
+              <mat-card-title-group>
+                <mat-card-title><span class="color-anthracite">Name:</span> {{user?.username}}</mat-card-title>
+                <mat-card-subtitle><span class="color-anthracite">Role:</span> {{user?.role}}</mat-card-subtitle>
+              </mat-card-title-group>
+            </mat-card-header>
+          </mat-card>
+    </div>
+</section>

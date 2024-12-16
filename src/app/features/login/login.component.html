@@ -1,0 +1,30 @@
+<section class="section">
+    <div class="container">
+        <div class="card">
+            <form class="form flex flex-center" [formGroup]="loginForm">
+                <div class="section-head">
+                    <h1 class="section-title">Login</h1>
+                    <p class="section-sub-title">Enter your username and password to logged in:</p>
+                </div>
+                <mat-form-field class="form-field" appearance="outline">
+                    <mat-label>Username</mat-label>
+                    <input type="username" matInput formControlName="username">
+                    @if (loginForm.get('username')?.errors?.['minlength']) {
+                        <mat-error class="error">Username must be at least 3 characters long.</mat-error>
+                    }
+                    @if (loginForm.get('username')?.hasError('required')) {
+                        <mat-error class="error">Username is required</mat-error>
+                    }
+                </mat-form-field>
+                <mat-form-field class="form-field" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput formControlName="password">
+                    @if (loginForm.get('password')?.hasError('required')) {
+                        <mat-error class="error">Password is required</mat-error>
+                    }
+                </mat-form-field>
+                <button class="btn primary" (click)="submitLoginForm()" [disabled]="loginForm.invalid">LOGIN</button>
+            </form>
+        </div>
+    </div>
+</section>

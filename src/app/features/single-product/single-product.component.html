@@ -1,0 +1,31 @@
+<section class="section">
+    <div class="container">
+        <div class="cards-wrapper">
+            @if (isLoading) {
+                <div class="card w-100">
+                    <app-loading [repeat]="5"></app-loading>
+                </div>
+            } @else if (isFailure) {
+                wedwef
+            }  @else {
+                <mat-card class="card card-product" appearance="outlined">
+                    <div mat-card-image>
+                        <img [src]="productsDetails.image" [alt]="productsDetails.title">
+                    </div>
+                    <div>
+                        <mat-card-header>
+                            <mat-card-title>{{productsDetails.title}}</mat-card-title>
+                            <div class="card-meta">
+                                <mat-card-subtitle class="price">{{productsDetails.price}}</mat-card-subtitle>
+                                <mat-card-subtitle>{{productsDetails.category}}</mat-card-subtitle>
+                            </div>
+                        </mat-card-header>
+                        <mat-card-content>
+                            {{productsDetails.description}}
+                        </mat-card-content>
+                    </div>
+                </mat-card>
+            }
+        </div>
+    </div>
+</section>
