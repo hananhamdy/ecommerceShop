@@ -7,11 +7,13 @@ import { APIs } from '../../core/configs/APIs.config';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductDetails } from '../../core/interfaces/product-details.interface';
 import { LoadingComponent } from '../../shared/components/loading/loading.component';
+import { PriceFormattingPipe } from '../../shared/pipes/price-formatting.pipe';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-single-product',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, HttpClientModule, LoadingComponent],
+  imports: [MatCardModule, MatButtonModule, HttpClientModule, LoadingComponent, PriceFormattingPipe, MatIconModule],
   templateUrl: './single-product.component.html',
   styleUrl: './single-product.component.scss'
 })

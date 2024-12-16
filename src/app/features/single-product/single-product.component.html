@@ -15,9 +15,15 @@
                     <div>
                         <mat-card-header>
                             <mat-card-subtitle>{{productsDetails.category}}</mat-card-subtitle>
-                            <mat-card-title>{{productsDetails.title}}</mat-card-title>
+                            <div class="card-title-wrapper">
+                                <mat-card-title>{{productsDetails.title}}</mat-card-title>
+                                <div class="ratting">
+                                    <mat-icon class="icon" aria-hidden="false" aria-label="Example star icon" fontIcon="star"></mat-icon>
+                                    <span>{{productsDetails.rating?.rate}}</span>
+                                </div>
+                            </div>
                             <div class="card-meta">
-                                <mat-card-subtitle class="price">{{productsDetails.price}}</mat-card-subtitle>
+                                <mat-card-subtitle class="price">{{ productsDetails.price | priceFormatting:'$' }}</mat-card-subtitle>
                             </div>
                         </mat-card-header>
                         <mat-card-content>
