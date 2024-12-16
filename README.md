@@ -1,59 +1,146 @@
-# AngularProjectName
+# Angular Project - [Ecommerce-Shop]
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.5.
+Welcome to the [Ecommerce-Shop] repository! This Angular application is designed for [Ecommerce Shop]. This README provides setup instructions, feature descriptions, and usage guidelines to help you get started.
 
-## Development server
+## Demo
+https://hananhamdy.com/projects/Ecommerce-Project/browser/home
 
-To start a local development server, run:
+## Getting Started
 
-```bash
-ng serve
-```
+### Prerequisites
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Node.js** (version 14+)
+- **Angular CLI** (version 18): Install via `npm install -g @angular/cli`
 
-## Code scaffolding
+### Installation
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+1. **Clone the repository:**
 
-```bash
-ng generate component component-name
-```
+   ```bash
+   git clone https://github.com/hananhamdy/Ecommerce-Project
+   cd your-repo-name
+   
+2. **Install dependencies:**
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+   ```bash
+   npm install
+3. **Run the application locally:**
 
-```bash
-ng generate --help
-```
+   ```bash
+   ng serve
+4. **Project Structure:**
+   ```bash
+   src
+      ├── app
+      │   ├── core
+      │   │   ├── services
+      │   │   ├── interceptors
+      │   │   ├── guards
+      │   │   ├── core.module.ts
+      │   │   └── index.ts
+      │   │
+      │   ├── shared       
+      │   │   ├── components       
+      │   │   ├── directives     
+      │   │   ├── pipes           
+      │   │   ├── models          
+      │   │   ├── shared.module.ts 
+      │   │   └── index.ts         
+      │   │
+      │   ├── features         
+      │   │   ├── login            
+      │   │   │   ├── ...   
+      │   │   │
+      │   │   ├── home       
+      │   │   │   ├── ...
+      │   │   │
+      │   │   └── ...
+      │   │
+      │   ├── app-routing.module.ts 
+      │   ├── app.component.ts     
+      │   ├── app.module.ts        
+      │   └── index.ts              
+      │
+      ├── assets                   
+      │   └── ...
+      │
+      ├── environments             
+      │   ├── environment.ts       
+      │   └── environment.prod.ts 
+      │
+      └── styles                   
+          └── main.scss
 
-## Building
+## Features
 
-To build the project run:
+### Feature #1: Home Page
+   - Entry point to the website with a **welcome banner** for users.
 
-```bash
-ng build
-```
+### Feature #2: Page Title
+   - Displays a **specific title** for each page, improving navigation and SEO.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Feature #3: Login Page
+   - Allows users to **log in** with a **username** and **password**.
+   - **Username validation**: Required field with a minimum of 4 characters, displaying clear error messages if invalid.
+   - **Password validation**: Required field with a clear error message if left empty.
+   - On entering incorrect credentials, a **toaster message** will display "**Invalid credentials**."
+   - **Successful login** redirects the user to the **Home Page**.
 
-## Running unit tests
+### Feature #4: Profile Page
+   - **Only accessible to logged-in users**; otherwise, redirects to the **Login Page**.
+   - Displays a **card** with the user's information such as **username**, **role**, and **profile image**.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Feature #5: Categories Page
+   - **Only accessible to logged-in users**; otherwise, redirects to the **Login Page**.
+   - If logged in as an **admin**, the user can **add**, **edit**, and **delete** products.
+   - Users can **filter products** by category selection from a **dropdown**. All products are displayed by default.
 
-```bash
-ng test
-```
+### Feature #6: Add Product
+   - Accessible only to **admin users**, with a dedicated "**Add Product**" button.
+   - Displays an **overlay form** with validation for adding new products.
+   - Upon successful submission, the newly added product appears in the **products list**.
 
-## Running end-to-end tests
+### Feature #7: API Handling
+   - Covers the following cases:
+     - **Loading**: Displayed when data is being fetched.
+     - **Empty/No Data**: Displayed if no data exists.
+     - **Failure**: Displayed when an API call fails.
 
-For end-to-end (e2e) testing, run:
+### Feature #8: Routing Guard
+   1. **Access Control for Unauthenticated Users**:
+      - If an **unauthenticated (not logged-in)** user attempts to access restricted pages—such as **Categories**, **Profile**, or **Single Product** pages—the system automatically redirects them to the **Login Page**.
+   2. **Undefined Route Handling**:
+      - If a user navigates to an **undefined route**, they are redirected to the **Oops Page**, which informs them of the invalid navigation.
 
-```bash
-ng e2e
-```
+### Feature #9: Oops Page
+   - Shows an "**Oops**" message for users navigating to an **undefined route** or page.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Feature #10: Header Component
+   - If the user is **not logged in**, only the **Home** and **Login** links are displayed.
+   - For **logged-in users**, **Home**, **Categories**, **Profile**, and **Logout** links are available.
 
-## Additional Resources
+### Feature #11: Footer Component
+   - Displays **website copyright** information.
+     
+### Feature #12: UI
+   - Using **Angular Material** for UI components.
+   - Implemented styles with **SCSS** to create a responsive and modern design.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Technologies Used
+
+- **Angular**: Frontend framework for building dynamic single-page applications.
+- **TypeScript**: A JavaScript superset with static typing, providing enhanced developer tools and scalability.
+- **Angular Material**: UI component library that provides pre-built, customizable, and responsive design components (optional).
+- **RxJS**: Reactive programming library for handling asynchronous data streams.
+- **SCSS**: CSS preprocessor used for advanced styling, making it easier to write and maintain complex CSS.
+
+## Scripts
+
+- **Run Application Locally**:  
+  ```bash
+  ng serve
+Runs the Angular application locally at http://localhost:4200.
+- **Build for Production:**:  
+  ```bash
+  ng build --prod
