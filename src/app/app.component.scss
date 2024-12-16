@@ -1,0 +1,9 @@
+.page-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .page-wrapper-bottom {
+        margin-top: auto;
+    }
+}
