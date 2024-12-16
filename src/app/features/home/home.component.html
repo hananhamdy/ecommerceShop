@@ -28,6 +28,7 @@
                         </div>
                         <mat-card-header>
                             <mat-card-title>
+                                <mat-card-subtitle>{{product.category}}</mat-card-subtitle>
                                 <div class="w-100">
                                     {{product.title}}
                                 </div>
@@ -39,7 +40,6 @@
                         <mat-card-actions>
                             <button class="btn primary" [routerLink]="'/home/' + product.id">show more</button>
                             @if (user && user.role == 'admin') {
-                                <button mat-button (click)="updateProduct(product)" >Edit</button>
                                 <button mat-button (click)="deleteProduct(product)">Delete</button>
                             }
                         </mat-card-actions>

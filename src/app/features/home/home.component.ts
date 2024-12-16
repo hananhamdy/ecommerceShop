@@ -34,7 +34,7 @@ dialog = inject(Dialog);
   isLoading = false;
 
   constructor(private _titleService: Title, private _http: HttpClient, private _authenticationService: AuthenticationService) {
-    this._titleService.setTitle("Categories");
+    this._titleService.setTitle("Home");
   }
 
   ngOnInit() {
@@ -83,13 +83,7 @@ dialog = inject(Dialog);
       });
     });
   }
-
-  updateProduct(item: Product) {
-    this._snackBar.open('Not implemented yet', 'Close', {
-      duration: 2000,
-    });
-  }
-
+  
   addProduct(product: Product) {
     const body = {...product, image: 'https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg'};
     this._http.post<Product[]>(APIs.Products.AddProduct, body).subscribe((res) => {

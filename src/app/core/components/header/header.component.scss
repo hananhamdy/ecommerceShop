@@ -29,7 +29,28 @@
     }
 
     &-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
         font-size: 20px;
+        font-weight: bold;
+
+        &-img {
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: $color-light-grey;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                display: inline-block;
+                width: 1.5rem;
+                height: 1.5rem;
+                object-fit: cover;
+            }
+        }
     }
 
     &-list {
