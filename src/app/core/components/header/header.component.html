@@ -1,11 +1,11 @@
 <header class="header">
     <div class="container">
         <div class="header-content">
-            <div class="header-logo">
+            <div class="header-logo" [routerLink]="'/home'">
                 <span class="header-logo-img">
                     <img src="assets/images/logo.png" alt="Logo">
                 </span>
-                <a class="" [routerLink]="'/home'">E-Commerce Shop</a>
+                <span>E-Commerce Shop</span>
             </div>
             <div class="toggle-menu" (click)="toggleMenu()">
                 <img src="assets/images/menu.svg" alt="Menu">
