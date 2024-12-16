@@ -10,7 +10,7 @@ https://hananhamdy.com/projects/Ecommerce-Project/browser/home
 ### Prerequisites
 
 - **Node.js** (version 14+)
-- **Angular CLI** (version 18): Install via `npm install -g @angular/cli`
+- **Angular CLI** (version 19): Install via `npm install -g @angular/cli`
 
 ### Installation
 
@@ -74,7 +74,9 @@ https://hananhamdy.com/projects/Ecommerce-Project/browser/home
 ## Features
 
 ### Feature #1: Home Page
-   - Entry point to the website with a **welcome banner** for users.
+   - Entry point to the website.
+   - If logged in as an **admin**, the user can **add** and **delete** products.
+   - Users can **filter products** by category selection from a **dropdown**. All products are displayed by default.
 
 ### Feature #2: Page Title
    - Displays a **specific title** for each page, improving navigation and SEO.
@@ -88,38 +90,33 @@ https://hananhamdy.com/projects/Ecommerce-Project/browser/home
 
 ### Feature #4: Profile Page
    - **Only accessible to logged-in users**; otherwise, redirects to the **Login Page**.
-   - Displays a **card** with the user's information such as **username**, **role**, and **profile image**.
+   - Displays a **card** with the user's information such as **username**, **role**, and **profile image**.  
 
-### Feature #5: Categories Page
-   - **Only accessible to logged-in users**; otherwise, redirects to the **Login Page**.
-   - If logged in as an **admin**, the user can **add**, **edit**, and **delete** products.
-   - Users can **filter products** by category selection from a **dropdown**. All products are displayed by default.
-
-### Feature #6: Add Product
+### Feature #5: Add Product
    - Accessible only to **admin users**, with a dedicated "**Add Product**" button.
    - Displays an **overlay form** with validation for adding new products.
    - Upon successful submission, the newly added product appears in the **products list**.
 
-### Feature #7: API Handling
+### Feature #6: API Handling
    - Covers the following cases:
      - **Loading**: Displayed when data is being fetched.
      - **Empty/No Data**: Displayed if no data exists.
      - **Failure**: Displayed when an API call fails.
 
-### Feature #8: Routing Guard
+### Feature #7: Routing Guard
    1. **Access Control for Unauthenticated Users**:
       - If an **unauthenticated (not logged-in)** user attempts to access restricted pages—such as **Categories**, **Profile**, or **Single Product** pages—the system automatically redirects them to the **Login Page**.
    2. **Undefined Route Handling**:
       - If a user navigates to an **undefined route**, they are redirected to the **Oops Page**, which informs them of the invalid navigation.
 
-### Feature #9: Oops Page
+### Feature #8: Oops Page
    - Shows an "**Oops**" message for users navigating to an **undefined route** or page.
 
-### Feature #10: Header Component
+### Feature #9: Header Component
    - If the user is **not logged in**, only the **Home** and **Login** links are displayed.
-   - For **logged-in users**, **Home**, **Categories**, **Profile**, and **Logout** links are available.
+   - For **logged-in users**, **Home**, **Profile**, and **Logout** links are available.
 
-### Feature #11: Footer Component
+### Feature #10: Footer Component
    - Displays **website copyright** information.
      
 ### Feature #12: UI
