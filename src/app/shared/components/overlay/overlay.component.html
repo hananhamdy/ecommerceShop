@@ -1,0 +1,40 @@
+<div class="overlay">
+  <h1 class="overlay-title">{{data.isAdd ? 'Add new product' : 'Edit product'}}</h1>
+  <div>
+    <form class="form flex flex-center" [formGroup]="submitForm">
+      <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title">
+        @if (submitForm.get('title')?.hasError('required')) {
+          <mat-error class="error">Title is required</mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Price</mat-label>
+        <input matInput formControlName="price">
+        @if (submitForm.get('price')?.hasError('required')) {
+          <mat-error class="error">Price is required</mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+        @if (submitForm.get('description')?.hasError('required')) {
+          <mat-error class="error">Description is required</mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="category">
+          @for (item of categoriesList; track $index) {
+            <mat-option [value]="item">{{item}}</mat-option>
+          }
+        </mat-select>
+        @if (submitForm.get('category')?.hasError('required')) {
+          <mat-error class="error">Category is required</mat-error>
+        }
+      </mat-form-field>
+    </form>
+  </div>
+  <button class="btn primary" (click)="dialogRef.close(submitForm.value)" [disabled]="submitForm.invalid">Add</button>
+</div>
