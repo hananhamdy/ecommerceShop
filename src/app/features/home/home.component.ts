@@ -106,7 +106,7 @@ dialog = inject(Dialog);
 
   openDialog(type: string): void {
     const dialogRef = this.dialog.open<string>(OverlayComponent, {
-      width: '300px',
+      width: '600px',
       data: {
         isAdd: type == 'add',
       },
