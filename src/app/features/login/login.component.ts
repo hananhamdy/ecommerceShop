@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
     if (user) {
       localStorage.setItem('loggedInUser', JSON.stringify(user));
       this._authenticationService.user.next(user);
-      this._router.navigate(['/home']);
+      this._router.navigate(['/']);
     } else {
       this._snackBar.open('Invalid credentials', 'Close', {
         duration: 2000,
