@@ -2,9 +2,6 @@
 
 Welcome to the [Ecommerce-Shop] repository! This Angular application is designed for [Ecommerce Shop]. This README provides setup instructions, feature descriptions, and usage guidelines to help you get started.
 
-## Demo
-https://hananhamdy.com/projects/ecommerce-shop/browser
-
 ## Getting Started
 
 ### Prerequisites
